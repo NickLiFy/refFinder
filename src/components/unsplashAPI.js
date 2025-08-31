@@ -1,4 +1,4 @@
-import { UNSPLASH_ACCESS_KEY } from '../.env';
+const UNSPLASH_ACCESS_KEY = import.meta.env.UNSPLASH_ACCESS_KEY;
 
 export const searchUnsplash = async (query, perPage = 5) => {
   try {
