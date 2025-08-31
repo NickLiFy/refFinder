@@ -1,4 +1,3 @@
-const UNSPLASH_ACCESS_KEY = import.meta.env.UNSPLASH_ACCESS_KEY;
 
 export const searchUnsplash = async (query, perPage = 5) => {
   try {
@@ -6,7 +5,7 @@ export const searchUnsplash = async (query, perPage = 5) => {
       `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=${perPage}`,
       {
         headers: {
-          Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}`,
+          Authorization: `Client-ID ${import.meta.env.VITE_UNSPLASH_ACCESS_KEY}`,
         },
       }
     );
