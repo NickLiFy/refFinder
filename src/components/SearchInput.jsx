@@ -29,11 +29,13 @@ const SearchInput = ({ onSearch }) => {
   let warnings = {
     lengthText: [`Максимальная длина запроса - ${lengthLimitText} символов.`, ''],
   }
+  
+  const sharedStyles = "p-4 pl-[30px] pr-[30px] border-white rounded-full border-2";
 
-  const sharedStyles = "absolute p-4 pl-[30px] pr-[30px] border-white rounded-full border-2 transform transition-all duration-150";
+  const smoothing = "transform transition-all duration-150"
 
   return (
-    <div className="max-w-[90%] text-xl p-20 flex items-center justify-center">
+    <div className="max-w-[90%] text-xl p-17 flex items-center justify-center">
       <div className="container relative flex items-center justify-center">
         <input type="text"
           value={query}
@@ -48,19 +50,16 @@ const SearchInput = ({ onSearch }) => {
           }
           onKeyDown={handleKeyDown}
           placeholder='Search for reference...'
-          className={`${sharedStyles} bg-[#191919] text-center z-1`}
+          className={`absolute ${sharedStyles} ${smoothing} bg-[#191919] text-center z-1 focus:outline-none`}
           style={{ width: `${inputWidth}px` }} />
 
         <span
           ref={spanRef}
-          className="invisible absolute whitespace-pre text-xl p-4 pl-[30px] pr-[30px] border-white rounded-full border-2 ">
+          className={`invisible absolute whitespace-pre ${sharedStyles}`}>
           {query || 'Search for reference...'}
         </span>
 
-        {/* <div className={`${sharedStyles} bg-[#191919] text-center z-1`}>
-          hello
-        </div> */}
-        <div className={`${sharedStyles} bg-white text-black text-right z-0 ${query!='' ? 'translate-x-[150px]' : 'translate-x-[0]'}`}
+        <div className={`absolute ${sharedStyles} ${smoothing} bg-white text-black text-right z-0 ${query!='' ? 'translate-x-[140px]' : 'translate-x-[0]'}`}
           style={{ width: `${inputWidth}px` }}>
           Enhance?
         </div>
