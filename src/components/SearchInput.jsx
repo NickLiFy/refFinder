@@ -50,7 +50,7 @@ const SearchInput = ({ onSearch }) => {
           }
           onKeyDown={handleKeyDown}
           placeholder='Search for reference...'
-          className={`absolute ${sharedStyles} ${smoothing} bg-[#191919] text-center z-1 focus:outline-none`}
+          className={`absolute bg-gradient-to-b from-white/10 to-neutral-900/10 ${sharedStyles} ${smoothing} bg-[#191919] text-center z-1 focus:outline-none`}
           style={{ width: `${inputWidth}px` }} />
 
         <span
