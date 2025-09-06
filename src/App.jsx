@@ -4,7 +4,7 @@ import Button from './components/Button';
 import SearchInput from './components/SearchInput';
 import { searchUnsplash } from './components/unsplashAPI';
 import UnsplashImg from './components/APIs/UnsplashImg';
-import SourcePrefs from './components/SourcePrefs';
+import SourcePrefs from './components/sourcePrefs';
 import Settings from './components/Settings';
 
 const App = () => {
