@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from './Button';
-import CheckBox from './checkBox';
+import CheckBox from './CheckBox';
 
 export default function SourcePrefs({ sourceName, onClick = () => {}, className = '' }) {
     const [checked, setChecked] = useState(false);
